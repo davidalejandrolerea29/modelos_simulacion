@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/Calcular.css">
+</head>
+<body>
+
+<!--         <p class="fs-4 position-absolute start-50 translate-middle">Agregá artefactos eléctricos </p> <br> -->
+
+	<div class="container" style="width: 70%;margin:auto;margin-top: 5%;">
+        <p class="fs-2">Simulador de Consumo</p>
+        <hr class="col-3 col-md-2 mb-5">
+
+         <button type="button" class="btn btn-primary ocultar" onclick="CargarSimulador();">Nueva Simulación</button>
+
+         <p class="fs-5 d-none d-none ocultar" style="margin-top: 2%;">Nueva simulación</p>
+         <hr class="col-3 col-md-8 mb-5 d-none ocultar">
+
+          <p class="d-none ocultar">Nombre: </p>
+          <input type="text" class="form-control d-none ocultar" placeholder="Ejemplo: Consumos de mi Departamento" aria-label="Username" aria-describedby="basic-addon1">
+          <p class="fs-5 d-none ocultar" style="margin-top: 2%;">Selecciona los ambientes que tiene tu vivienda</p>
+
+
+          <div class="div-ambientes-vivienda col-md-11 d-none ocultar">
+          	<button type="button" class="btn btn-outline-primary">Balcon</button>
+          	<button type="button" class="btn btn-outline-primary">Baño</button>
+          	<button type="button" class="btn btn-outline-primary">Cocina</button>
+          	<button type="button" class="btn btn-outline-primary">Dormitorio</button>
+          	<button type="button" class="btn btn-outline-primary">Escritorio</button>
+          	<button type="button" class="btn btn-outline-primary">Garage</button>
+          	<button type="button" class="btn btn-outline-primary">Lavadero</button>
+          	<button type="button" class="btn btn-outline-primary">Living</button>
+          	<button type="button" class="btn btn-outline-primary">Patio</button>
+          	<button type="button" class="btn btn-outline-primary">Patio Interno</button>
+          	<button type="button" class="btn btn-outline-primary">Quincho</button>
+          </div> <br>
+
+          
+          <button type="button" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x d-none ocultar" style="margin-bottom: 2%;" onclick="CargarTabla();">Siguiente</button>
+
+
+
+
+
+
+<ul class="nav nav-tabs d-none" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+  </li>
+</ul>
+<div class="tab-content d-none" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+   	<table class="table" id="tabla" style="margin-top: 5%;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+   <table class="table" id="tabla" style="margin-top: 5%;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+  	<table class="table" id="tabla" style="margin-top: 5%;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
+
+
+
+<script src="jQuery/jquery.js"></script>
+    <script src="ajax/ajax.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+	function CargarSimulador() {
+    $('.d-none').removeClass("d-none");
+    
+  }
+
+  function CargarTabla() {
+    document.getElementById("myTabContent").style.display = null;
+    $( ".ocultar" ).addClass( "d-none" );
+  }
+       
+</script>
+</body>
+</html>

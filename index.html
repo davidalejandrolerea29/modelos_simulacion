@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css">
+
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="grid.css">
+</head>
+<body>
+	<div class="contenedor">
+
+		<div class="principal"> 
+			<div class="VerCosumo">
+				<h2>Tus Consumos</h2><br>
+
+			    <table class="table" id="tabla">
+                <tr>
+                  <th>Electrodomésticos</th>
+                  <th>Horas de Uso</th>
+                  <th id="ConsumoMensualCalcular">Consumo Mensual</th>
+                  <th>Eliminar</th>
+                </tr>
+          </table>
+           
+           <br>
+          <button type="button" action="Calcular.html" onclick="Calcular();"><h3>Calcular</h3></button>
+			</div>
+
+          
+          <div class="ResultadoConsumo">
+          	<h3>Resultados de la Simulación</h3>
+          	<table class="table-Resultado" id="tableResultado">
+                <tr>
+                  <th>Total Bruto</th>
+                  <th>Costo Fijo</th>
+                  <th>IVA</th>
+                  <th>Costo Final</th>
+                </tr>
+          	</table>
+          </div>
+		</div>
+
+		<div class="sidebar">
+			<div class="nav-sidebar">
+				<div class="nav-sidebar-icon">
+					<button style="width: 30px; height: 30px;">
+						<i class="fas fa-align-justify fa-1x"></i>
+					</button>
+				</div>
+				<div class="nav-sidebar-titulo">
+					<h2>Simular Consumo</h2> 
+				</div>
+			</div>
+			<div class="contenido-sidebar">
+				<form action="">
+					<div class="form">
+						<label for="uname" class="form-label">Nombre del Producto</label>
+					    <select name="select" class="form-select" id="select-electrodomestico">
+                        <option value="value1">Value 1</option>
+                        <option value="value2" selected>Value 2</option>
+                        <option value="value3">Value 3</option>
+                    </select>
+					</div>
+
+					<div class="form">
+						<label for="uname" class="form-label">Potencia en W o Va</label>
+                        <input type="text" id="PotenciaWoVa" name="name" class="form-input">
+					</div>
+
+					<div class="form">
+						<label for="uname" class="form-label">Cantidad</label>
+                        <input type="text" id="Cantidad" name="name" class="form-input">
+					</div>
+
+					<div class="form">
+						<label for="uname" class="form-label">Horas de uso por día</label>
+                        <input type="text" id="HorasDeUso" name="name" class="form-input">
+					</div>
+                    
+                    <div class="form-button">
+                        <button  type="button" class="form-button" onclick="agregarFila();">Agregar Electrodoméstico</button>
+                    </div>
+				</form>
+
+				
+			</div>
+
+			<div class="Electrodomesticos">
+				<div class="Electrodomesticos-titulo">
+					<p>Agregar De Manera Automatica</p> 
+				</div>
+				<div class="Electrodomesticos-tipos">
+					<button style="background-color: #02a44e;border:0;border-radius: 5px;">A+++</button>
+					<button style="background-color: #4cb848;border:0;border-radius: 5px;">A++</button>
+					<button style="background-color: #c2d52b;border:0;border-radius: 5px;">A+</button>
+					<button style="background-color: #fef104;border:0;border-radius: 5px;">A</button>
+					<button style="background-color: #fdb815;border:0;border-radius: 5px;">B</button>
+					<button style="background-color: #f97020;border:0;border-radius: 5px;">C</button>
+					<button style="background-color: #f11b23;border:0;border-radius: 5px;">D</button>
+				</div>
+				<div class="Electrodomesticos-lista">
+					<button class="Electrodomesticos-button"><img src="imagenes/microondas.png" width="30" height="20" alt=""></button>
+					<p>Microondas</p>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function agregarFila(){
+
+    var PotenciaWoVa = document.getElementById("PotenciaWoVa").value;
+    var HorasDeUso = document.getElementById("HorasDeUso").value;
+    var selectelectrodomestico = document.getElementById("select-electrodomestico").value;
+    var Cantidad = document.getElementById("Cantidad").value;
+    var PotenciaKw = PotenciaWoVa/1000;
+    var Kwh = PotenciaKw * HorasDeUso;
+    var KwhMes = Kwh*30;
+    KwhMes = KwhMes * Cantidad;
+
+
+
+
+    document.getElementById("tabla").insertRow(-1).innerHTML = '<tr><td>'+selectelectrodomestico+'</td><td>'+HorasDeUso+'</td><td>'+KwhMes+'</td><td><i class="far fa-trash-alt" onclick="eliminarFila();"></i></td></tr>';
+
+     document.getElementById("PotenciaWoVa").value = "";
+     document.getElementById("HorasDeUso").value = "";
+     document.getElementById("Cantidad").value = "";
+
+  }
+
+function eliminarFila(){
+  var table = document.getElementById("tabla");
+  var rowCount = table.rows.length;
+  //console.log(rowCount);
+  
+  if(rowCount <= 1)
+    alert('No se puede eliminar el encabezado');
+  else
+    table.deleteRow(rowCount -1);
+   }
+
+
+   function Calcular(){
+     var total = 0;
+    
+    for(var i = 0; tabla.rows[i]; i++) {
+     document.getElementById('ConsumoMensualCalcular').value
+        total += Number(tabla.rows[i].cells[2].innerHTML) * document.getElementById(ConsumoMensualCalcular).value ;
+    }
+    return total
+    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+simular por historico 
+
+1-pagina donde el usuario ingrese la cantidad de historicos que va a cargar.
+2-calcular el posible consumo y su posible gasto.

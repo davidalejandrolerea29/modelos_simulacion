@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.contenedor {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, auto);
+	grid-template-areas: "contenido contenido contenido MenuLateral"
+	                     "contenido contenido contenido MenuLateral"
+	               
+}
+
+.principal{
+	grid-area: contenido;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "VerCosumo"
+	                     "ResultadoConsumo"
+	                     "c"
+}
+
+.VerCosumo{
+	grid-area: VerCosumo;
+}
+
+.ResultadoConsumo{
+	grid-area: ResultadoConsumo;
+}
+
+.sidebar{
+	grid-area: MenuLateral;
+	height: 1000px;
+	background: #CDCDCD;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(10, auto);
+	grid-template-areas: "nav"
+	                     "contenido"
+	                     "Listaelectrodomesticos"
+
+}
+
+.nav-sidebar{
+	grid-area: nav;
+	height: 10%;
+	margin-top: 5%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(1, auto);
+	grid-template-areas: "icono titulo titulo titulo titulo"
+}
+
+.nav-sidebar-icon{
+	grid-area: icono;
+    margin: auto;
+}
+
+.nav-sidebar-titulo{
+	grid-area: titulo;
+   
+}
+
+.contenido-sidebar{
+	grid-area: contenido;
+    display: grid;
+    margin-top: 2%;
+    margin-left: 5%;
+
+}
+
+
+.form{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, auto);
+	grid-template-areas: "label input";
+}
+
+.button-xl{
+	display: grid;
+	width: 90%;
+}
+
+
+.Electrodomesticos{
+	grid-area: Listaelectrodomesticos;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "titulo"
+	                     "tiposElectrodomestico"
+	                     "listaElectrodomesticos";
+}
+
+
+.Electrodomesticos-titulo{
+	grid-area: titulo;
+}
+
+.Electrodomesticos-tipos{
+	grid-area: tiposElectrodomestico;
+}
+
+.Electrodomesticos-lista{
+	grid-area: listaElectrodomesticos;
+}

@@ -1,0 +1,108 @@
+label{
+	margin-bottom: 10px;
+}
+
+select{
+	height: 30px;
+	border-radius: 5px;
+	width: 80%;
+	margin-bottom: 20px;
+}
+
+input{
+	height: 30px;
+	border-radius: 5px;
+	width: 50px;
+	margin-bottom: 20px;
+	border: 0;
+}
+
+.form-button{
+	height: 30px;
+	border-radius: 5px;
+	padding: 5px;
+	border: 0;
+	margin: auto;
+	width: 80%;
+}
+
+.Electrodomesticos{
+	margin-left: 5%;
+}
+
+.Electrodomesticos-titulo{
+   font-size: 20px;
+   margin: auto;
+}
+
+.Electrodomesticos-button{
+	border: 0;
+	margin-top: 5%;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+.Electrodomesticos-tipos{
+	margin-left: 16%;
+}
+
+.Electrodomesticos-tipos button{
+	padding: 5px;
+}
+
+.Electrodomesticos-lista p{
+	font-size: 14px;
+	margin-left: -2%;
+}
+
+.principal{
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.table tr th{
+	width: 500px;
+	margin: auto;
+	background-color: #E3E4E5;
+	height: 30px;
+}
+
+.table td{
+	background-color: #EEEEEE;
+	text-align: center;
+}
+
+.principal button{
+	border: 0;
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 10%;
+}
+
+.ResultadoConsumo{
+	margin-top: -20%;
+	width: 50%;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	height: 80%;
+}
+
+.ResultadoConsumo h3{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.table-Resultado{
+	background-color: white;
+	text-align: center;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.table-Resultado tr th{
+	width: 200px;
+	margin: auto;
+	background-color: #E3E4E5;
+	height: 30px;
+}
